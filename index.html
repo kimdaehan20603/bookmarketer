@@ -14,18 +14,21 @@
     
     <style>
         :root {
-            /* 네오 브루탈리즘 핵심 컬러 팔레트 */
-            --bg-color: #F4F0EB;
-            --black: #111111;
+            /* 미스터블루 브랜드 아이덴티티 컬러 팔레트 */
+            --mb-blue: #003BFF;       /* 메인 로고 블루 */
+            --mb-mint: #00C8A4;       /* 포인트 민트 */
+            --mb-cyan: #22D3EE;       /* 서브 스카이블루 */
+            --mb-navy: #0A1931;       /* 딥 네이비 */
+            --mb-blue-light: #EBF1FF; /* 연한 블루 배경 */
+            --mb-mint-light: #E6FAF6; /* 연한 민트 배경 */
+
+            --bg-color: #F5F7FB;      /* 차분하고 세련된 소프트 쿨그레이 */
+            --black: #111827;         /* 선명한 차콜 블랙 */
             --white: #FFFFFF;
-            --cyan: #00E5FF;
-            --yellow: #FFD600;
-            --pink: #FFA6C9;
-            --green: #00E676;
-            --purple: #9D00FF;
-            --border-width: 4px;
-            --box-shadow: 8px 8px 0 var(--black);
-            --box-shadow-hover: 12px 12px 0 var(--black);
+            
+            --border-width: 3px;
+            --box-shadow: 6px 6px 0 var(--black);
+            --box-shadow-hover: 10px 10px 0 var(--mb-blue);
         }
 
         * {
@@ -53,14 +56,14 @@
             background-color: var(--white);
             border: var(--border-width) solid var(--black);
             box-shadow: var(--box-shadow);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 40px;
             margin-bottom: 40px;
             transition: all 0.2s ease-in-out;
         }
 
         .neo-box:hover {
-            transform: translate(-4px, -4px);
+            transform: translate(-3px, -3px);
             box-shadow: var(--box-shadow-hover);
         }
 
@@ -69,19 +72,19 @@
             display: inline-block;
             font-family: 'Space Mono', monospace;
             font-weight: 700;
-            font-size: 14px;
-            padding: 6px 12px;
+            font-size: 13px;
+            padding: 6px 14px;
             border: 2px solid var(--black);
             border-radius: 20px;
             box-shadow: 2px 2px 0 var(--black);
             margin-right: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
-        .tag.blue { background-color: var(--cyan); }
-        .tag.yellow { background-color: var(--yellow); }
-        .tag.pink { background-color: var(--pink); }
-        .tag.green { background-color: var(--green); }
-        .tag.purple { background-color: var(--purple); }
+        .tag.blue { background-color: var(--mb-blue); color: var(--white); }
+        .tag.mint { background-color: var(--mb-mint); color: var(--black); }
+        .tag.cyan { background-color: var(--mb-cyan); color: var(--black); }
+        .tag.navy { background-color: var(--mb-navy); color: var(--white); }
+        .tag.light-blue { background-color: var(--mb-blue-light); color: var(--mb-blue); }
 
         .header-section {
             padding: 80px 0 40px;
@@ -90,21 +93,23 @@
         
         .header-section .subtitle {
             font-family: 'Space Mono', monospace;
-            font-size: 20px;
-            font-weight: 700;
-            background-color: var(--yellow);
+            font-size: 18px;
+            font-weight: 800;
+            background-color: var(--mb-mint);
+            color: var(--black);
             display: inline-block;
             padding: 8px 16px;
             border: 3px solid var(--black);
             box-shadow: 4px 4px 0 var(--black);
             border-radius: 8px;
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
         .header-section h1 {
-            font-size: 56px;
+            font-size: 54px;
             font-weight: 900;
-            line-height: 1.2;
+            line-height: 1.25;
             letter-spacing: -1.5px;
             margin-bottom: 20px;
         }
@@ -112,6 +117,7 @@
         .header-section h1 span {
             display: inline-block;
             position: relative;
+            color: var(--black);
         }
 
         .header-section h1 span::after {
@@ -120,8 +126,9 @@
             left: 0;
             bottom: 4px;
             width: 100%;
-            height: 16px;
-            background-color: var(--cyan);
+            height: 14px;
+            background-color: var(--mb-mint);
+            opacity: 0.55;
             z-index: -1;
         }
 
@@ -140,7 +147,7 @@
             box-shadow: var(--box-shadow);
             border-radius: 12px;
             overflow: hidden;
-            background-color: #e0e0e0;
+            background-color: var(--mb-blue-light);
             position: relative;
         }
 
@@ -156,7 +163,7 @@
             border: var(--border-width) solid var(--black);
             box-shadow: var(--box-shadow);
             border-radius: 12px;
-            padding: 30px;
+            padding: 32px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -165,14 +172,17 @@
         .profile-info h2 {
             font-size: 32px;
             font-weight: 900;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            color: var(--black);
         }
 
         .profile-info h3 {
-            font-size: 18px;
-            color: #555;
+            font-size: 16px;
+            color: var(--mb-blue);
             margin-bottom: 25px;
             font-family: 'Space Mono', monospace;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         .info-list {
@@ -190,7 +200,7 @@
         .info-list li i {
             margin-top: 4px;
             margin-right: 12px;
-            color: var(--purple);
+            color: var(--mb-blue);
             font-size: 18px;
             width: 20px;
             text-align: center;
@@ -206,24 +216,29 @@
         .strength-card {
             background-color: var(--white);
             border: var(--border-width) solid var(--black);
-            box-shadow: 6px 6px 0 var(--black);
+            box-shadow: 5px 5px 0 var(--black);
             border-radius: 12px;
-            padding: 25px;
+            padding: 24px;
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 7px 7px 0 var(--mb-blue);
         }
 
         .strength-icon {
-            font-size: 24px;
-            background-color: var(--pink);
+            font-size: 22px;
             border: 2px solid var(--black);
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: 10px;
             flex-shrink: 0;
             box-shadow: 3px 3px 0 var(--black);
         }
@@ -236,7 +251,7 @@
 
         .strength-text p {
             font-size: 14px;
-            color: #444;
+            color: #4B5563;
             font-weight: 600;
         }
 
@@ -246,17 +261,16 @@
 
         .folder-tab {
             display: inline-block;
-            background-color: var(--black);
-            color: var(--white);
             border: var(--border-width) solid var(--black);
             border-bottom: none;
             padding: 10px 24px;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
-            border-radius: 16px 16px 0 0;
-            margin-bottom: -4px;
+            border-radius: 14px 14px 0 0;
+            margin-bottom: -3px;
             position: relative;
             z-index: 2;
+            letter-spacing: 0.5px;
         }
 
         .folder-content {
@@ -275,57 +289,56 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 25px;
-            border-bottom: 3px solid var(--black);
-            padding-bottom: 15px;
+            border-bottom: 2px solid var(--black);
+            padding-bottom: 18px;
             flex-wrap: wrap;
             gap: 15px;
         }
 
-        /* 큰 프로젝트명과 회색 소제목을 묶어주는 그룹 */
         .project-title-group {
             width: 100%;
             margin-bottom: 10px;
         }
 
         .project-main-title {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 900;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             color: var(--black);
             word-break: keep-all;
         }
 
         .project-sub-title {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
-            color: #777777;
+            color: var(--mb-blue);
         }
 
         .project-desc {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
-            margin-bottom: 30px;
-            color: #333;
-            background-color: #f9f9f9;
+            margin-bottom: 28px;
+            color: #1F2937;
+            background-color: var(--mb-blue-light);
             padding: 20px;
-            border-left: 4px solid var(--black);
-            border-radius: 4px;
+            border-left: 5px solid var(--mb-blue);
+            border-radius: 6px;
         }
 
         /* 프로젝트 내부 탭 스타일 */
         .project-inner-tabs {
             display: flex;
-            gap: 12px;
+            gap: 10px;
         }
 
         .tab-btn {
             background-color: var(--white);
             border: 2px solid var(--black);
-            box-shadow: 4px 4px 0 var(--black);
-            padding: 8px 18px;
-            font-size: 16px;
+            box-shadow: 3px 3px 0 var(--black);
+            padding: 9px 18px;
+            font-size: 15px;
             font-weight: 800;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.1s ease;
             display: flex;
@@ -335,28 +348,30 @@
 
         .tab-btn:hover {
             transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--black);
+            box-shadow: 1px 1px 0 var(--black);
+            color: var(--mb-blue);
         }
 
         .tab-btn.active {
-            background-color: var(--black);
-            color: var(--yellow);
+            background-color: var(--mb-blue);
+            color: var(--white);
             box-shadow: 0 0 0 var(--black);
-            transform: translate(4px, 4px);
+            transform: translate(3px, 3px);
+            border-color: var(--black);
         }
         
         /* 성과(Outcome) 카드 스타일 */
         .outcome-container {
             display: grid;
-            gap: 15px;
+            gap: 16px;
             margin-bottom: 30px;
         }
         
         .outcome-card {
-            background-color: #F8F9FA;
-            border: 3px solid var(--black);
-            border-radius: 8px;
-            padding: 20px 25px;
+            background-color: var(--mb-mint-light);
+            border: 2px solid var(--black);
+            border-radius: 10px;
+            padding: 20px 24px;
             box-shadow: 4px 4px 0 var(--black);
             font-size: 16px;
             font-weight: 600;
@@ -365,15 +380,15 @@
         .outcome-card h4 {
             font-size: 18px;
             font-weight: 800;
-            color: var(--purple);
+            color: var(--mb-blue);
             margin-bottom: 8px;
             display: inline-block;
-            border-bottom: 2px solid var(--purple);
+            border-bottom: 2px solid var(--mb-mint);
         }
 
         .tab-pane {
             display: none;
-            animation: fadeIn 0.4s ease;
+            animation: fadeIn 0.35s ease;
         }
 
         .tab-pane.active {
@@ -381,7 +396,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -396,22 +411,22 @@
 
         .window-bar {
             background-color: var(--black);
-            height: 35px;
+            height: 36px;
             display: flex;
             align-items: center;
-            padding: 0 15px;
+            padding: 0 16px;
             gap: 8px;
         }
 
         .window-dot {
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
         }
 
         .dot-r { background-color: #FF5F56; }
-        .dot-y { background-color: #FFBD2E; }
-        .dot-g { background-color: #27C93F; }
+        .dot-y { background-color: var(--mb-mint); }
+        .dot-g { background-color: var(--mb-blue); }
 
         .window-body {
             padding: 0;
@@ -427,68 +442,69 @@
             object-fit: cover;
         }
 
-        /* 추가된 이미지 캡션(설명) 스타일 */
         .window-caption {
-            padding: 15px 20px;
-            background-color: #f8f9fa;
-            border-top: 2px dashed #ccc;
+            padding: 16px 20px;
+            background-color: #F8FAFC;
+            border-top: 2px dashed #CBD5E1;
             font-size: 15px;
             font-weight: 700;
-            color: #333;
+            color: #334155;
             text-align: center;
             font-family: 'Space Mono', 'Noto Sans KR', sans-serif;
         }
 
         .ending-section {
-            background-color: var(--black);
+            background-color: var(--mb-navy);
             color: var(--white);
-            padding: 100px 20px;
+            padding: 90px 20px;
             text-align: center;
             border-top: var(--border-width) solid var(--black);
             border-bottom: var(--border-width) solid var(--black);
             margin-top: 80px;
-            box-shadow: 0 15px 0 var(--cyan);
+            box-shadow: 0 14px 0 var(--mb-mint);
         }
 
         .ending-section h2 {
-            font-size: 64px;
+            font-size: 56px;
             font-weight: 900;
             margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
         .ending-section p {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 19px;
+            font-weight: 500;
             max-width: 650px;
             margin: 0 auto 40px;
             line-height: 1.8;
-            color: #ddd;
+            color: #E2E8F0;
         }
 
         .contact-box {
             display: inline-block;
-            background-color: var(--yellow);
+            background-color: var(--mb-mint);
             color: var(--black);
-            padding: 15px 30px;
+            padding: 16px 32px;
             border: 3px solid var(--black);
-            box-shadow: 6px 6px 0 var(--pink);
+            box-shadow: 5px 5px 0 var(--mb-blue);
             border-radius: 12px;
             font-family: 'Space Mono', monospace;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 17px;
+            line-height: 1.8;
         }
 
         /* 반응형 모바일 최적화 */
         @media (max-width: 768px) {
-            .header-section h1 { font-size: 38px; }
+            .header-section h1 { font-size: 36px; }
             .profile-grid { grid-template-columns: 1fr; }
             .profile-img { max-width: 100%; aspect-ratio: 1/1; }
-            .folder-content { padding: 25px; }
+            .folder-content { padding: 24px; }
             .project-title-group { flex-direction: column; align-items: flex-start; }
             .project-inner-tabs { flex-wrap: wrap; width: 100%; }
             .tab-btn { flex: 1 1 auto; padding: 10px; font-size: 14px; }
-            .ending-section h2 { font-size: 40px; }
+            .ending-section h2 { font-size: 38px; }
         }
     </style>
 </head>
@@ -516,13 +532,13 @@
                     <li><i class="fa-solid fa-phone"></i> <div>010-5482-0944</div></li>
                 </ul>
                 <div style="margin-top: 20px;">
-                    <span class="tag green">Excel</span>
-                    <span class="tag green">Notion</span>
-                    <span class="tag green">CapCut</span>
-                    <span class="tag green">Generative AI</span>
-                    <span class="tag green">GA4/Meta Pixel</span>
-                    <span class="tag green">Slack</span>
-                    <span class="tag green">Words</span>
+                    <span class="tag light-blue">Excel</span>
+                    <span class="tag light-blue">Notion</span>
+                    <span class="tag light-blue">CapCut</span>
+                    <span class="tag light-blue">Generative AI</span>
+                    <span class="tag light-blue">GA4/Meta Pixel</span>
+                    <span class="tag light-blue">Slack</span>
+                    <span class="tag light-blue">Words</span>
                 </div>
             </div>
         </section>
@@ -530,42 +546,42 @@
         <!-- 강점 그리드 -->
         <section class="strengths-grid">
             <div class="strength-card">
-                <div class="strength-icon" style="background-color: var(--cyan);"><i class="fa-solid fa-gears"></i></div>
+                <div class="strength-icon" style="background-color: var(--mb-blue); color: white;"><i class="fa-solid fa-gears"></i></div>
                 <div class="strength-text">
                     <h4>데이터 & 트래킹 설계</h4>
                     <p>GA4·Pixel 트래킹 세팅 및 GAS 활용 마케팅 파이프라인 자동화</p>
                 </div>
             </div>
             <div class="strength-card">
-                <div class="strength-icon" style="background-color: var(--yellow);"><i class="fa-solid fa-funnel-dollar"></i></div>
+                <div class="strength-icon" style="background-color: var(--mb-mint); color: var(--black);"><i class="fa-solid fa-funnel-dollar"></i></div>
                 <div class="strength-text">
                     <h4>풀퍼널 미디어 믹스</h4>
                     <p>채널별 전환 데이터 분석 및 퍼널별 매체 예산 최적화</p>
                 </div>
             </div>
             <div class="strength-card">
-                <div class="strength-icon" style="background-color: var(--pink);"><i class="fa-solid fa-vial-circle-check"></i></div>
+                <div class="strength-icon" style="background-color: var(--mb-blue-light); color: var(--mb-blue);"><i class="fa-solid fa-vial-circle-check"></i></div>
                 <div class="strength-text">
                     <h4>가설 기반 A/B 테스트</h4>
                     <p>타깃 세분화 기반 콘텐츠 실험으로 도달률 3배 상승 경험</p>
                 </div>
             </div>
             <div class="strength-card">
-                <div class="strength-icon" style="background-color: var(--green);"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div class="strength-icon" style="background-color: var(--mb-mint-light); color: var(--mb-mint);"><i class="fa-solid fa-mobile-screen"></i></div>
                 <div class="strength-text">
                     <h4>사용자 크리에이티브</h4>
                     <p>페르소나 페인포인트 분석&시선 흐름을 고려한 모바일 UX 기획</p>
                 </div>
             </div>
             <div class="strength-card">
-                <div class="strength-icon" style="background-color: var(--purple); color: white;"><i class="fa-solid fa-clapperboard"></i></div>
+                <div class="strength-icon" style="background-color: var(--mb-navy); color: white;"><i class="fa-solid fa-clapperboard"></i></div>
                 <div class="strength-text">
                     <h4>콘텐츠 & 캠페인 총괄</h4>
                     <p>시장 분석부터 생성형 AI 툴을 활용한 비디오 콘텐츠 제작까지</p>
                 </div>
             </div>
             <div class="strength-card">
-                <div class="strength-icon" style="background-color: var(--bg-color);"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="strength-icon" style="background-color: #E2E8F0; color: var(--black);"><i class="fa-solid fa-chart-line"></i></div>
                 <div class="strength-text">
                     <h4>비즈니스 인사이트</h4>
                     <p>공급망 및 시즌 지표 등 실무 데이터를 반영한 현실적 KPI 리빌딩</p>
@@ -573,9 +589,9 @@
             </div>
         </section>
 
-        <!-- PROJECT 01 (기존 2번: 타깃 맞춤 콘텐츠 실험) -->
+        <!-- PROJECT 01 -->
         <div class="folder-wrapper">
-            <div class="folder-tab" style="background-color: var(--cyan); color: var(--black);">PROJECT 01</div>
+            <div class="folder-tab" style="background-color: var(--mb-blue); color: var(--white);">PROJECT 01</div>
             <div class="folder-content">
                 <span class="tag blue">A/B Test</span>
                 <span class="tag blue">Threads</span>
@@ -597,7 +613,7 @@
                 <div id="p1-desc" class="tab-pane active">
                     <p class="project-desc">개인 스레드 및 인스타그램 채널 운영을 통해 SNS 스킬과 경험을 획득합니다.</p>
                     <ul class="info-list">
-                        <li><i class="fa-solid fa-caret-right"></i> <div><strong>해결 과제:</strong>좋아하고 관심있는 콘텐츠를 실제로 SNS에서 콘텐츠화하고, 데이터 인사이트를 얻고 개선하는 사이클 경험 </div></li>
+                        <li><i class="fa-solid fa-caret-right"></i> <div><strong>해결 과제:</strong> 좋아하고 관심있는 콘텐츠를 실제로 SNS에서 콘텐츠화하고, 데이터 인사이트를 얻고 개선하는 사이클 경험</div></li>
                     </ul>
                 </div>
 
@@ -609,7 +625,7 @@
                     </ul>
                 </div>
 
-                <div석 id="p1-result" class="tab-pane">
+                <div id="p1-result" class="tab-pane">
                     <div class="outcome-container">
                         <div class="outcome-card">
                             <h4>도달률 3배 이상 상승</h4>
@@ -631,17 +647,17 @@
                             <div class="window-caption">💡 독자 반응을 이끌어낸 트렌드 잭킹 콘텐츠 제작 및 데이터 인사이트 분석</div>
                         </div>
                     </div>
-                </div석
+                </div>
             </div>
         </div>
 
-        <!-- PROJECT 02 (기존 1번: 실전 MarTech & 퍼포먼스 마케팅) -->
+        <!-- PROJECT 02 -->
         <div class="folder-wrapper">
-            <div class="folder-tab" style="background-color: var(--yellow); color: var(--black);">PROJECT 02</div>
+            <div class="folder-tab" style="background-color: var(--mb-mint); color: var(--black);">PROJECT 02</div>
             <div class="folder-content">
-                <span class="tag yellow">GA4</span>
-                <span class="tag yellow">Meta Pixel</span>
-                <span class="tag yellow">GAS 자동화</span>
+                <span class="tag mint">GA4</span>
+                <span class="tag mint">Meta Pixel</span>
+                <span class="tag mint">GAS 자동화</span>
                 
                 <div class="project-header">
                     <div class="project-title-group">
@@ -658,7 +674,7 @@
                 <div id="p2-desc" class="tab-pane active">
                     <p class="project-desc">&lt;북페어링&gt;을 주제로 META 광고를 통해 신규 잠재 고객(리드) 확보를 위한 프로젝트입니다.</p>
                     <ul class="info-list">
-                        <li><i class="fa-solid fa-caret-right"></i> <div><strong>해결 과제:</strong> 단순 클릭 유도에 그치지 않고, 광고 유입부터 랜딩페이지 제작, 실제 리드 획득 및 자료 다운로드와 데이터 추까지 이어지는 풀퍼널 전환 구조 구축 및 이탈 구간 병목 해결</div></li>
+                        <li><i class="fa-solid fa-caret-right"></i> <div><strong>해결 과제:</strong> 단순 클릭 유도에 그치지 않고, 광고 유입부터 랜딩페이지 제작, 실제 리드 획득 및 자료 다운로드와 데이터 추적까지 이어지는 풀퍼널 전환 구조 구축 및 이탈 구간 병목 해결</div></li>
                     </ul>
                 </div>
 
@@ -674,11 +690,11 @@
                     <div class="outcome-container">
                         <div class="outcome-card">
                             <h4>효율적 트래픽 유입</h4>
-                            <p>18~34 타깃 맞춤 숏폼 소재 최적화를 통해 <strong>CTR 4.30%</strong> 및 <strong>랜딩 조회당 비용 114원</strong> 달성</br>▶다만 초기 클릭률과 유입 비용이 우수하다고 해서 무조건 최종 전환까지 이어지는 것은 아니며, 클릭을 유발한 기대감이 랜딩 페이지 첫 화면까지 매끄럽게 연결되는 설계가 필요하다는 것을 깨달음</p>
+                            <p>18~34 타깃 맞춤 숏폼 소재 최적화를 통해 <strong>CTR 4.30%</strong> 및 <strong>랜딩 조회당 비용 114원</strong> 달성<br>▶ 초기 클릭률을 넘어 유저 기대감이 랜딩페이지 첫 화면까지 매끄럽게 연결되는 설계의 중요성 체득</p>
                         </div>
                         <div class="outcome-card">
                             <h4>전환 병목 및 소재 효율 개선</h4>
-                            <p>리드 획득 단계 <strong>이탈률 86.3%에서 68.1%로 개선</strong> 및 2차 소재 개선으로 <strong>CPL 293원에서 121원으로 절감</strong></br>▶유입 단계에서 고관여 유저를 필터링 할 수 있는 퍼널의 연결성을 이해하고, 더 단계별 이탈을 파악할 수 있는 추적 포인트를 페이지나 문항 별로 세밀하게 심어야겠다고 느낌</p>
+                            <p>리드 획득 단계 <strong>이탈률 86.3%에서 68.1%로 개선</strong> 및 2차 소재 개선으로 <strong>CPL 293원에서 121원으로 절감</strong><br>▶ 유입 단계에서 고관여 유저를 필터링하는 연결 구조와 세분화된 단계별 추적 포인트의 필요성 파악</p>
                         </div>
                     </div>
                     <div class="window-ui">
@@ -698,12 +714,12 @@
 
         <!-- PROJECT 03 -->
         <div class="folder-wrapper">
-            <div class="folder-tab" style="background-color: var(--pink); color: var(--black);">PROJECT 03</div>
+            <div class="folder-tab" style="background-color: var(--mb-navy); color: var(--white);">PROJECT 03</div>
             <div class="folder-content">
-                <span class="tag pink">Funnel</span>
-                <span class="tag pink">Media Mix</span>
-                <span class="tag pink">Figma</span>
-                <span class="tag pink">Gen AI</span>
+                <span class="tag navy">Funnel</span>
+                <span class="tag navy">Media Mix</span>
+                <span class="tag navy">Figma</span>
+                <span class="tag navy">Gen AI</span>
                 
                 <div class="project-header">
                     <div class="project-title-group">
@@ -720,7 +736,7 @@
                 <div id="p3-desc" class="tab-pane active">
                     <p class="project-desc">식사 대용 쉐이크 브랜드 '배리웨이'의 신규 유입 대비 저조한 재구매 및 이탈 문제를 해결하기 위한 프로젝트입니다.</p>
                     <ul class="info-list">
-                        <li><i class="fa-solid fa-caret-right"></i> <div><strong>해결 과제:</strong> 특정 매체에 편중된 비효율적 예산 구조를 개선하고, 퍼널 단계별 이탈을 방어하는 최적의 미디어 믹 수립</div></li>
+                        <li><i class="fa-solid fa-caret-right"></i> <div><strong>해결 과제:</strong> 특정 매체에 편중된 비효율적 예산 구조를 개선하고, 퍼널 단계별 이탈을 방어하는 최적의 미디어 믹스 수립</div></li>
                     </ul>
                 </div>
 
@@ -760,11 +776,11 @@
 
         <!-- PROJECT 04 -->
         <div class="folder-wrapper">
-            <div class="folder-tab" style="background-color: var(--green); color: var(--black);">PROJECT 04</div>
+            <div class="folder-tab" style="background-color: var(--mb-cyan); color: var(--black);">PROJECT 04</div>
             <div class="folder-content">
-                <span class="tag green">Campaign</span>
-                <span class="tag green">Interactive Video</span>
-                <span class="tag green">Generative AI</span>
+                <span class="tag cyan">Campaign</span>
+                <span class="tag cyan">Interactive Video</span>
+                <span class="tag cyan">Generative AI</span>
                 
                 <div class="project-header">
                     <div class="project-title-group">
@@ -821,11 +837,11 @@
 
         <!-- PROJECT 05 -->
         <div class="folder-wrapper">
-            <div class="folder-tab" style="background-color: var(--purple); color: var(--white);">PROJECT 05</div>
+            <div class="folder-tab" style="background-color: var(--mb-blue); color: var(--white);">PROJECT 05</div>
             <div class="folder-content">
-                <span class="tag purple">Business Analysis</span>
-                <span class="tag purple">KPI Rebuilding</span>
-                <span class="tag purple">UX / UI</span>
+                <span class="tag blue">Business Analysis</span>
+                <span class="tag blue">KPI Rebuilding</span>
+                <span class="tag blue">UX / UI</span>
                 
                 <div class="project-header">
                     <div class="project-title-group">
@@ -883,8 +899,7 @@
 
     <section class="ending-section">
         <h2>I Design SYNERGY</h2>
-        <p>내가 좋아하는 것들을 남들도 좋아할 수 있도록, 또한 오랫동안 마음에 남을 수 있는 콘텐츠를 만들 수 있는 가교가 되고 싶습니다.
-<br></p>
+        <p>내가 좋아하는 것들을 남들도 좋아할 수 있도록, 또한 오랫동안 마음에 남을 수 있는 콘텐츠를 만들 수 있는 가교가 되고 싶습니다.</p>
         <div class="contact-box">
             <i class="fa-solid fa-envelope" style="margin-right:10px;"></i> han0944@kakao.com<br>
             <i class="fa-solid fa-mobile-screen-button" style="margin-right:10px;"></i> 010-5482-0944
